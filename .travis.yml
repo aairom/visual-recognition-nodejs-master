@@ -1,0 +1,17 @@
+language: node_js
+dist: trusty
+sudo: required
+node_js: 8
+script: npm test
+cache:
+  directories:
+  - node_modules
+env:
+  global:
+  - VISUAL_RECOGNITION_API_KEY="n8-X4fPIAIcQAQdid7FiPFr29azB2Gq0dA3gmqnTxR8b"
+deploy:
+- provider: script
+  skip_cleanup: true
+  script: npx semantic-release
+  on:
+    node: 8
